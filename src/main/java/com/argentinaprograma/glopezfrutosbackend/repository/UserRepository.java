@@ -1,8 +1,8 @@
 package com.argentinaprograma.glopezfrutosbackend.repository;
 
-import com.argentinaprograma.glopezfrutosbackend.model.AppUser;
+import com.argentinaprograma.glopezfrutosbackend.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<AppUser, Long> {
-    AppUser findByUsername(String username);
+public interface UserRepository extends JpaRepository<User, Long> {
+    User findByUsername(String username);
 }
