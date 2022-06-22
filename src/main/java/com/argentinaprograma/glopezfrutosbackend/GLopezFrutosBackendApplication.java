@@ -27,7 +27,6 @@ public class GLopezFrutosBackendApplication {
     CommandLineRunner run(IUserService userService) {
         return args ->{
             userService.saveRole(new Role(null, "ROLE_USER"));
-            userService.saveRole(new Role(null, "ROLE_MANAGER"));
             userService.saveRole(new Role(null, "ROLE_ADMIN"));
 
             userService.saveUser(new User(null, "Paul", "paul", "1234", new ArrayList<>()));
@@ -36,10 +35,9 @@ public class GLopezFrutosBackendApplication {
             userService.saveUser(new User(null, "George", "george", "1234", new ArrayList<>()));
 
             userService.addRoleRoUser("paul", "ROLE_USER");
-            userService.addRoleRoUser("john", "ROLE_MANAGER");
+            userService.addRoleRoUser("john", "ROLE_USER");
+            userService.addRoleRoUser("ringo", "ROLE_USER");
             userService.addRoleRoUser("ringo", "ROLE_ADMIN");
-            userService.addRoleRoUser("george", "ROLE_USER");
-            userService.addRoleRoUser("george", "ROLE_MANAGER");
             userService.addRoleRoUser("george", "ROLE_ADMIN");
         };
     }
