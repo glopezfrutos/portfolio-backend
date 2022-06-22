@@ -1,7 +1,7 @@
-package com.argentinaprograma.glopezfrutosbackend.security;
+package com.argentinaprograma.glopezfrutosbackend.login.security;
 
-import com.argentinaprograma.glopezfrutosbackend.filter.CustomAuthenticationFilter;
-import com.argentinaprograma.glopezfrutosbackend.filter.CustomAuthorizationFilter;
+import com.argentinaprograma.glopezfrutosbackend.login.filter.CustomAuthenticationFilter;
+import com.argentinaprograma.glopezfrutosbackend.login.filter.CustomAuthorizationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.argentinaprograma.glopezfrutosbackend.controller;
+package com.argentinaprograma.glopezfrutosbackend.login.controller;
 
 import lombok.Data;
 

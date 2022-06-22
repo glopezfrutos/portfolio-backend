@@ -1,6 +1,6 @@
-package com.argentinaprograma.glopezfrutosbackend.repository;
+package com.argentinaprograma.glopezfrutosbackend.login.repository;
 
-import com.argentinaprograma.glopezfrutosbackend.model.Role;
+import com.argentinaprograma.glopezfrutosbackend.login.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RoleRepository extends JpaRepository<Role, Long> {

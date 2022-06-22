@@ -1,8 +1,8 @@
 package com.argentinaprograma.glopezfrutosbackend;
 
-import com.argentinaprograma.glopezfrutosbackend.model.Role;
-import com.argentinaprograma.glopezfrutosbackend.model.User;
-import com.argentinaprograma.glopezfrutosbackend.service.IUserService;
+import com.argentinaprograma.glopezfrutosbackend.login.model.Role;
+import com.argentinaprograma.glopezfrutosbackend.login.model.User;
+import com.argentinaprograma.glopezfrutosbackend.login.service.IUserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

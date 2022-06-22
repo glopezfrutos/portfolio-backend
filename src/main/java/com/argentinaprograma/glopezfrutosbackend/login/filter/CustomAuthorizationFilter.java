@@ -1,4 +1,4 @@
-package com.argentinaprograma.glopezfrutosbackend.filter;
+package com.argentinaprograma.glopezfrutosbackend.login.filter;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;

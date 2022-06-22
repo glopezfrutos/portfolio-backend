@@ -1,8 +1,8 @@
-package com.argentinaprograma.glopezfrutosbackend.controller;
+package com.argentinaprograma.glopezfrutosbackend.login.controller;
 
-import com.argentinaprograma.glopezfrutosbackend.model.Role;
-import com.argentinaprograma.glopezfrutosbackend.model.User;
-import com.argentinaprograma.glopezfrutosbackend.service.IUserService;
+import com.argentinaprograma.glopezfrutosbackend.login.model.Role;
+import com.argentinaprograma.glopezfrutosbackend.login.model.User;
+import com.argentinaprograma.glopezfrutosbackend.login.service.IUserService;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -61,21 +61,21 @@ public class UserController {
         String authorizationHeader = request.getHeader(AUTHORIZATION);
         if(authorizationHeader != null && authorizationHeader.startsWith("Bearer ")){
             try {
-                String refresh_token = authorizationHeader.substring("Bearer ".length());
+                String refreshToken = authorizationHeader.substring("Bearer ".length());
                 Algorithm algorithm = Algorithm.HMAC256("secret".getBytes());
                 JWTVerifier verifier = JWT.require(algorithm).build();
-                DecodedJWT decodedJWT = verifier.verify(refresh_token);
+                DecodedJWT decodedJWT = verifier.verify(refreshToken);
                 String username = decodedJWT.getSubject();
                 User user = userService.getUser(username);
-                String access_token = JWT.create()
+                String accessToken = JWT.create()
                         .withSubject(user.getUsername())
                         .withExpiresAt(new Date(System.currentTimeMillis() + 10 * 60 * 1000))
                         .withIssuer(request.getRequestURL().toString())
                         .withClaim("roles", user.getRoles().stream().map(Role::getName).collect(Collectors.toList()))
                         .sign(algorithm);
                 Map<String, String> tokens = new HashMap<>();
-                tokens.put("access_token", access_token);
-                tokens.put("refresh_token", refresh_token);
+                tokens.put("access_token", accessToken);
+                tokens.put("refresh_token", refreshToken);
                 response.setContentType(APPLICATION_JSON_VALUE);
                 new ObjectMapper().writeValue(response.getOutputStream(), tokens);
             } catch (Exception exception) {

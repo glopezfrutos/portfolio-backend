@@ -1,7 +1,7 @@
-package com.argentinaprograma.glopezfrutosbackend.service;
+package com.argentinaprograma.glopezfrutosbackend.login.service;
 
-import com.argentinaprograma.glopezfrutosbackend.model.User;
-import com.argentinaprograma.glopezfrutosbackend.model.Role;
+import com.argentinaprograma.glopezfrutosbackend.login.model.User;
+import com.argentinaprograma.glopezfrutosbackend.login.model.Role;
 
 import java.util.List;
 

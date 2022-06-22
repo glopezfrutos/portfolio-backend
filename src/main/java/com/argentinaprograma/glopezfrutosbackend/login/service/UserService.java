@@ -1,9 +1,9 @@
-package com.argentinaprograma.glopezfrutosbackend.service;
+package com.argentinaprograma.glopezfrutosbackend.login.service;
 
-import com.argentinaprograma.glopezfrutosbackend.model.Role;
-import com.argentinaprograma.glopezfrutosbackend.model.User;
-import com.argentinaprograma.glopezfrutosbackend.repository.RoleRepository;
-import com.argentinaprograma.glopezfrutosbackend.repository.UserRepository;
+import com.argentinaprograma.glopezfrutosbackend.login.model.Role;
+import com.argentinaprograma.glopezfrutosbackend.login.model.User;
+import com.argentinaprograma.glopezfrutosbackend.login.repository.RoleRepository;
+import com.argentinaprograma.glopezfrutosbackend.login.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

@@ -1,4 +1,4 @@
-package com.argentinaprograma.glopezfrutosbackend.model;
+package com.argentinaprograma.glopezfrutosbackend.login.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
