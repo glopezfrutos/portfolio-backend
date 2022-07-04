@@ -1,14 +1,16 @@
 package com.argentinaprograma.glopezfrutosbackend.login.controller;
 
 import com.argentinaprograma.glopezfrutosbackend.login.model.Role;
+import com.argentinaprograma.glopezfrutosbackend.login.model.RoleToUserForm;
 import com.argentinaprograma.glopezfrutosbackend.login.model.User;
-import com.argentinaprograma.glopezfrutosbackend.login.service.IUserService;
+import com.argentinaprograma.glopezfrutosbackend.login.service.UserService;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -30,8 +32,9 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
+@Slf4j
 public class UserController {
-    private final IUserService userService;
+    private final UserService userService;
 
     @GetMapping("/user")
     public ResponseEntity<List<User>> getUsers() {

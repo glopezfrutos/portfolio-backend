@@ -45,6 +45,7 @@ public class UserService implements IUserService, UserDetailsService {
     public User saveUser(User user) {
         log.info("Saving new user {} to the database", user.getName());
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.getRoles().add(roleRepository.findByName("ROLE_USER"));
         return userRepository.save(user);
     }
 

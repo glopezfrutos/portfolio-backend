@@ -1,4 +1,4 @@
-package com.argentinaprograma.glopezfrutosbackend.login.security;
+package com.argentinaprograma.glopezfrutosbackend.login.config;
 
 import com.argentinaprograma.glopezfrutosbackend.login.filter.CustomAuthenticationFilter;
 import com.argentinaprograma.glopezfrutosbackend.login.filter.CustomAuthorizationFilter;
@@ -36,12 +36,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         customAuthenticationFilter.setFilterProcessesUrl("/api/v1/login");
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(STATELESS);
-        http.authorizeRequests().antMatchers("/api/v1/login/**", "/api/v1/refreshtoken/**").permitAll();
+        http.authorizeRequests().antMatchers("/api/v1/login/", "/api/v1/login/**", "/api/v1/refreshtoken/**").permitAll();
         http.authorizeRequests().antMatchers(GET, "/api/v1/user/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN");
         http.authorizeRequests().antMatchers(POST, "/api/v1/user/**", "/api/v1/role/**", "/api/v1//role/addtouser/**").hasAnyAuthority("ROLE_ADMIN");
-        http.authorizeRequests().anyRequest().authenticated();
+        http.authorizeRequests().anyRequest().authenticated()
+                .and()
+                .httpBasic();
         http.addFilter(customAuthenticationFilter);
         http.addFilterBefore(new CustomAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
+        http.cors();
+
     }
 
     @Bean
