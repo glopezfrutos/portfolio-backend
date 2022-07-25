@@ -1,7 +1,7 @@
 package com.argentinaprograma.glopezfrutosbackend.login.service;
 
-import com.argentinaprograma.glopezfrutosbackend.login.model.Role;
-import com.argentinaprograma.glopezfrutosbackend.login.model.User;
+import com.argentinaprograma.glopezfrutosbackend.login.entity.Role;
+import com.argentinaprograma.glopezfrutosbackend.login.entity.User;
 import com.argentinaprograma.glopezfrutosbackend.login.repository.RoleRepository;
 import com.argentinaprograma.glopezfrutosbackend.login.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +31,7 @@ public class UserService implements IUserService, UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username);
-        if(user == null) {
+        if (user == null) {
             log.error("User not found in the database");
             throw new UsernameNotFoundException("User not found in the database");
         } else {
@@ -41,6 +41,7 @@ public class UserService implements IUserService, UserDetailsService {
         user.getRoles().forEach(role -> authorities.add(new SimpleGrantedAuthority(role.getName())));
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), authorities);
     }
+
     @Override
     public User saveUser(User user) {
         log.info("Saving new user {} to the database", user.getName());

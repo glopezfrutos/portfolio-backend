@@ -1,4 +1,4 @@
-package com.argentinaprograma.glopezfrutosbackend.login.config;
+package com.argentinaprograma.glopezfrutosbackend.config;
 
 import com.argentinaprograma.glopezfrutosbackend.login.filter.CustomAuthenticationFilter;
 import com.argentinaprograma.glopezfrutosbackend.login.filter.CustomAuthorizationFilter;

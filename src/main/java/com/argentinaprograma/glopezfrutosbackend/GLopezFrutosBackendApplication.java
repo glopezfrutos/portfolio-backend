@@ -1,7 +1,7 @@
 package com.argentinaprograma.glopezfrutosbackend;
 
-import com.argentinaprograma.glopezfrutosbackend.login.model.Role;
-import com.argentinaprograma.glopezfrutosbackend.login.model.User;
+import com.argentinaprograma.glopezfrutosbackend.login.entity.Role;
+import com.argentinaprograma.glopezfrutosbackend.login.entity.User;
 import com.argentinaprograma.glopezfrutosbackend.login.service.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,17 +25,12 @@ public class GLopezFrutosBackendApplication {
 
     @Bean
     CommandLineRunner run(UserService userService) {
-        return args ->{
+        return args -> {
             userService.saveRole(new Role(null, "ROLE_USER"));
             userService.saveRole(new Role(null, "ROLE_ADMIN"));
 
-            userService.saveUser(new User(null, "Paul", "paul", "1234", new ArrayList<>()));
-            userService.saveUser(new User(null, "John", "john", "1234", new ArrayList<>()));
-            userService.saveUser(new User(null, "Ringo", "ringo", "1234", new ArrayList<>()));
-            userService.saveUser(new User(null, "George", "george", "1234", new ArrayList<>()));
-
-            userService.addRoleRoUser("ringo", "ROLE_ADMIN");
-            userService.addRoleRoUser("george", "ROLE_ADMIN");
+            userService.saveUser(new User(null, "Admin", "admin", "1234", new ArrayList<>()));
+            userService.addRoleRoUser("Admin", "ROLE_ADMIN");
         };
     }
 }

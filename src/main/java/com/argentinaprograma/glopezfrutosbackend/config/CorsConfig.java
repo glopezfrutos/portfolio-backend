@@ -1,4 +1,4 @@
-package com.argentinaprograma.glopezfrutosbackend.login.config;
+package com.argentinaprograma.glopezfrutosbackend.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

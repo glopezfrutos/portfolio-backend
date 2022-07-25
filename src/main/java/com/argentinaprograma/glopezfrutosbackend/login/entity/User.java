@@ -1,4 +1,4 @@
-package com.argentinaprograma.glopezfrutosbackend.login.model;
+package com.argentinaprograma.glopezfrutosbackend.login.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +13,8 @@ import java.util.Collection;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String username;

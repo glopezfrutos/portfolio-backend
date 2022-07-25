@@ -1,8 +1,8 @@
 package com.argentinaprograma.glopezfrutosbackend.login.controller;
 
-import com.argentinaprograma.glopezfrutosbackend.login.model.Role;
-import com.argentinaprograma.glopezfrutosbackend.login.model.RoleToUserForm;
-import com.argentinaprograma.glopezfrutosbackend.login.model.User;
+import com.argentinaprograma.glopezfrutosbackend.login.entity.Role;
+import com.argentinaprograma.glopezfrutosbackend.login.entity.RoleToUserForm;
+import com.argentinaprograma.glopezfrutosbackend.login.entity.User;
 import com.argentinaprograma.glopezfrutosbackend.login.service.UserService;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
@@ -62,7 +62,7 @@ public class UserController {
     @GetMapping("/refreshtoken")
     public void refreshToken(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String authorizationHeader = request.getHeader(AUTHORIZATION);
-        if(authorizationHeader != null && authorizationHeader.startsWith("Bearer ")){
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
             try {
                 String refreshToken = authorizationHeader.substring("Bearer ".length());
                 Algorithm algorithm = Algorithm.HMAC256("secret".getBytes());
