@@ -12,7 +12,11 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/v1/login").allowedOrigins("*").allowedMethods("POST");
+                registry.addMapping("/api/v1/login")
+                        .allowedOrigins("http://localhost:4200/", "https://glopezfrutos.web.app/about")
+                        .allowedMethods("POST");
+                registry.addMapping("/api/v1/portfolio/**")
+                        .allowedOrigins("http://localhost:4200/", "https://glopezfrutos.web.app/about");
             }
         };
     }
