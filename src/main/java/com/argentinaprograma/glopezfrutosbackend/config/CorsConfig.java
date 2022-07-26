@@ -13,10 +13,10 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/v1/login")
-                        .allowedOrigins("http://localhost:4200/", "https://glopezfrutos.web.app/about")
+                        .allowedOrigins("https://glopezfrutos.web.app")
                         .allowedMethods("POST");
                 registry.addMapping("/api/v1/portfolio/**")
-                        .allowedOrigins("http://localhost:4200/", "https://glopezfrutos.web.app/about");
+                        .allowedOrigins("https://glopezfrutos.web.app");
             }
         };
     }
