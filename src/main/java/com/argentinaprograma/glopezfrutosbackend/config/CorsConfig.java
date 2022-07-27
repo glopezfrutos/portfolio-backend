@@ -12,11 +12,8 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/v1/login")
-                        .allowedOrigins("https://glopezfrutos.web.app")
-                        .allowedMethods("POST");
-                registry.addMapping("/api/v1/portfolio/**")
-                        .allowedOrigins("https://glopezfrutos.web.app");
+                registry.addMapping("/api/v1/**")
+                        .allowedOrigins("*", "https://glopezfrutos.web.app");
             }
         };
     }
