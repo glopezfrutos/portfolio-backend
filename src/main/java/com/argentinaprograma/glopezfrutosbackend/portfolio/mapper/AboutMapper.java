@@ -1,5 +1,6 @@
-package com.argentinaprograma.glopezfrutosbackend.portfolio.dto;
+package com.argentinaprograma.glopezfrutosbackend.portfolio.mapper;
 
+import com.argentinaprograma.glopezfrutosbackend.portfolio.dto.AboutDto;
 import com.argentinaprograma.glopezfrutosbackend.portfolio.entity.About;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
