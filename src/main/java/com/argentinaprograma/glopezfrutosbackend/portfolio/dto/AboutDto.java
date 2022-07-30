@@ -11,4 +11,5 @@ public class AboutDto {
     private String subtitle;
     private String shortDescription;
     private String longDescription;
+    private String imgUrl;
 }

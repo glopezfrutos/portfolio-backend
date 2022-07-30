@@ -6,24 +6,23 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "experience")
+@Table
 @Data
 @NoArgsConstructor
 public class Experience {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "company", length = 30, nullable = false)
+    @Column(length = 30, nullable = false)
     private String company;
 
-    @Column(name = "role", length = 30, nullable = false)
+    @Column(length = 30, nullable = false)
     private String role;
 
-    @Column(name = "description", length = 500, nullable = false)
+    @Column(length = 500, nullable = false)
     private String description;
 
-    @Column(name = "imgUrl", length = 150, nullable = false)
+    @Column(length = 1500, nullable = false)
     private String imgUrl;
 }

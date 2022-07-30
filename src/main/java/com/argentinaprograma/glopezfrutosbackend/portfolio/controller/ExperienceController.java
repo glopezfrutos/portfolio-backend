@@ -18,25 +18,25 @@ public class ExperienceController {
 
     @PostMapping("/experience")
     public ExperienceDto postExperience(@RequestBody ExperienceDto dto) {
-        log.info("\n***** Creating experience section *****");
+        log.info("\n***** Creating experience record *****");
         return service.createExperience(dto);
     }
 
     @GetMapping("/experience")
     public List<ExperienceDto> getExperience() {
-        log.info("\n***** Reading experience section *****");
+        log.info("\n***** Reading experience records *****");
         return service.readExperience();
     }
 
     @PutMapping("/experience")
     public ExperienceDto putExperience(@RequestBody ExperienceDto dto) {
-        log.info("\n***** Updating experience section *****");
+        log.info("\n***** Updating experience record *****");
         return service.updateExperience(dto);
     }
 
     @DeleteMapping("/experience/{id}")
     public ResponseEntity<Void> deleteExperience(@PathVariable int id) {
-        log.info("\n***** Deleting experience section *****");
+        log.info("\n***** Deleting experience record *****");
         return service.deleteExperience(id);
     }
 }

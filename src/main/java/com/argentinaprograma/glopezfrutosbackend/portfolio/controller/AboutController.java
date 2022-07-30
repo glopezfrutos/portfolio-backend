@@ -18,25 +18,25 @@ public class AboutController {
 
     @PostMapping("/about")
     public AboutDto postAbout(@RequestBody AboutDto dto) {
-        log.info("\n***** Creating about section *****");
+        log.info("\n***** Creating about record *****");
         return service.createAbout(dto);
     }
 
     @GetMapping("/about")
     public List<AboutDto> getAbout() {
-        log.info("\n***** Reading about section *****");
+        log.info("\n***** Reading about records *****");
         return service.readAbout();
     }
 
     @PutMapping("/about")
     public AboutDto putAbout(@RequestBody AboutDto dto) {
-        log.info("\n***** Updating about section *****");
+        log.info("\n***** Updating about record *****");
         return service.updateAbout(dto);
     }
 
     @DeleteMapping("/about/{id}")
     public ResponseEntity<Void> deleteAbout(@PathVariable int id) {
-        log.info("\n***** Deleting about section *****");
+        log.info("\n***** Deleting about record *****");
         return service.deleteAbout(id);
     }
 }
