@@ -9,7 +9,6 @@ import lombok.Setter;
 public class SkillDto {
     private int id;
     private String skillName;
-    private String title;
     private String description;
     private int percentage;
     private SkillCategory skillCategory;
