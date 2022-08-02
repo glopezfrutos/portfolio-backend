@@ -23,8 +23,11 @@ public class Project {
     @Column(length = 100)
     private String deploy;
 
-    @Column(length = 100, nullable = false)
-    private String repository;
+    @Column(length = 100)
+    private String backEndRepository;
+
+    @Column(length = 100)
+    private String frontEndRepository;
 
     @Column(length = 1500)
     private String imgUrl;

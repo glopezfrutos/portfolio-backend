@@ -12,4 +12,5 @@ public class SkillDto {
     private String description;
     private int percentage;
     private SkillCategory skillCategory;
+    private String imgUrl;
 }

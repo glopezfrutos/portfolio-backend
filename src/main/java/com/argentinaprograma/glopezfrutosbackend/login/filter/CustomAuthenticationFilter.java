@@ -44,12 +44,12 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authentication) throws IOException, ServletException {
-        User user = (User)authentication.getPrincipal();
+        User user = (User) authentication.getPrincipal();
 //      Unsecure for production, only for this demo:
         Algorithm algorithm = Algorithm.HMAC256("secret".getBytes());
         String accessToken = JWT.create()
                 .withSubject(user.getUsername())
-                .withExpiresAt(new Date(System.currentTimeMillis() + 10 * 60 * 1000)) // Expires 10 minutes later
+                .withExpiresAt(new Date(System.currentTimeMillis() + 12 * 60 * 60 * 1000)) // Expires 12 hours later
                 .withIssuer(request.getRequestURL().toString())
                 .withClaim("roles", user.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList()))
                 .sign(algorithm);

@@ -10,6 +10,7 @@ public class ProjectDto {
     private String title;
     private String description;
     private String deploy;
-    private String repository;
+    private String backEndRepository;
+    private String frontEndRepository;
     private String imgUrl;
 }

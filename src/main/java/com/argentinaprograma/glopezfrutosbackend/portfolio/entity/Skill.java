@@ -26,4 +26,7 @@ public class Skill {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private SkillCategory skillCategory;
+
+    @Column(length = 1500)
+    private String imgUrl;
 }
